@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <nav class="navbar navbar-expand-sm bg-light">
         <a class="navbar-brand" href="http://lo1.sandomierz.pl">I LO CG</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
