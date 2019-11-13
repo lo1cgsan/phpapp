@@ -15,6 +15,14 @@ CREATE TABLE posty (
 	tresc VARCHAR NOT NULL
 );
 
+DROP TABLE IF EXISTS users;
+CREATE TABLE users (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	login CHAR(20) NOT NULL,
+	haslo CHAR(40),
+	email VARCHAR(50),
+	data DATE
+);
 
 -- INSERT INTO menu(tytul, plik, id) VALUES('Klasa', 'klasa', NULL);
 -- sqlite3 baza.db < baza.sql

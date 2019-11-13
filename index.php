@@ -25,4 +25,7 @@ else
 
 include_once(DINC.'template.php');
 
+// echo 'zaq1@WSX';
+// echo sha1('zaq1@WSX');
+// c380f833034d60bf035a134094eb538d600dc6f9
 ?>
