@@ -1,40 +1,36 @@
 <?php
 
 if (isset($_POST['login'])) {
-    global $db, $user;
+    global $db, $user, $kom;
     foreach ($_POST as $k => $v) {
         ${$k} = clrtxt($v);
-        print ${$k}."<br>";
+        // print ${$k}."<br>";
+    }
+
+    $ok = true;
+    if ($user->is_login($login)) {
+        $kom[] = "Podany login istnieje!";
+        $ok = false;
+    }
+
+    if ($user->is_email($email)) {
+        $kom[] = "Podany email istnieje!";
+        $ok = false;
+    }
+
+    if (strlen($haslo) < 8) {
+        $kom[] = "Za krótkie hasło!";
+        $ok = false;
+    }
+
+    if ($ok) {
+        $user->login = $login;
+        $user->email = $email;
+        $user->haslo = $haslo;
+        print_r($user->dane);
     }
 }
 
-if (isset($_GET['akcja'])) {
-    global $db;
-    $akcja = $_GET['akcja'];
-    $idw = $_GET['idw'];
-    switch ($akcja) {
-        case 'del':
-            $q = "DELETE FROM posty WHERE id = $idw";
-            $db->exec($q);
-            $kom[] = "Usunięto wiadomość!";
-            break;
-        case 'edit':
-            ;
-            break;
-    }
-}
-
-$ret = array();
-db_query('SELECT * FROM posty', $ret);
-echo '<h3>Użytkownik</h3>';
-echo '<ul>';
-foreach ($ret as $k => $t) {
-    echo '<li>';
-    echo $t['tresc'].' ';
-    echo '<a href="?id=formularz&akcja=del&idw='.$t['id'].'">Usuń »»»</a>';
-    echo '</li>';
-}
-echo '</ul>';
 ?>
 
 <form action="?id=userform" method="POST" name="dane" id="dane">
