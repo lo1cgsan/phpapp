@@ -34,17 +34,13 @@ class User {
 
 	function is_login($login) {
 		$qstr='SELECT id FROM users WHERE login=\''.$login.'\' LIMIT 1';
-		$ret = array();
-		db_query($qstr, $ret);
-    if ($ret) return true;
+    if (db_query($qstr)) return true;
     return false;
 	}
 
 	function is_email($email) {
 		$qstr='SELECT id FROM users WHERE email=\''.$email.'\' LIMIT 1';
-		$ret = array();
-		db_query($qstr, $ret);
-    if ($ret) return true;
+    if (db_query($qstr)) return true;
     return false;
 	}
 
