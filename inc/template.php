@@ -17,13 +17,13 @@
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
-<?php get_menu($id); ?>
+<?php get_menu($db, $id, $strona); ?>
             </ul>
         </div>
     </nav>
 
 <div class="jumbotron">
-  <h1><?php get_page_title($id); ?></h1>
+  <h1><?php get_page_title($strona); ?></h1>
   <p>Pierwsza aplikacja w PHP</p>
 </div>
 
@@ -31,8 +31,9 @@
 	<div class="row">
 		<div class="col">
 		<?php
-            get_koms();
-			get_page_content($id);
+            get_koms($db->kom);
+            get_koms($kom);
+			get_page_content($strona);
 		?>
 		</div>
 		<div class="col"></div>

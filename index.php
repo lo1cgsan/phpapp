@@ -8,22 +8,21 @@ ini_set('error_log', 'errorlog.txt');
 
 define('DINC', 'inc/');
 define('DBASE', 'db/');
-$dbfile = DBASE.'baza.db';
-$db=null;
 $kom = array();
+
 require_once(DINC.'functions.php');
 require_once(DINC.'db.php');
 require_once(DINC.'users.php');
 
-init_baza();
-init_tables();
-
+$db = new Baza(DBASE.'baza.db', $kom);
 $user = new User();
 
 if (isset($_GET['id']))
 	$id=$_GET['id'];
 else
-	$id='witam';
+	$id=1;
+
+$strona = array(); // tablica na rekord strony z bazy
 
 include_once(DINC.'template.php');
 
