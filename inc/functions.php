@@ -12,7 +12,7 @@
 function get_menu($db, $id, &$strona) {
 	$db->db_query('SELECT * FROM menu');
 	//print_r($ret);
- 	foreach ($db->ret as $k => $t) {
+ 	foreach (Baza::$ret as $k => $t) {
 		echo '
 <li class="nav-item">
     <a class="nav-link';

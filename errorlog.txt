@@ -1,0 +1,3 @@
+[26-Nov-2019 19:49:37 Europe/Warsaw] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/debian/public_html/phpapp/inc/users.php on line 37
+[26-Nov-2019 19:51:04 Europe/Warsaw] PHP Notice:  Undefined variable: id in /home/debian/public_html/phpapp/userform.html on line 36
+[26-Nov-2019 19:51:10 Europe/Warsaw] PHP Notice:  Undefined variable: id in /home/debian/public_html/phpapp/userform.html on line 36

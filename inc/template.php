@@ -31,9 +31,9 @@
 	<div class="row">
 		<div class="col">
 		<?php
-            get_koms($db->kom);
-            get_koms($kom);
 			get_page_content($strona);
+            get_koms(Baza::$kom);
+            get_koms($kom);
 		?>
 		</div>
 		<div class="col"></div>
