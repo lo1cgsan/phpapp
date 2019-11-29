@@ -17,7 +17,7 @@
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
-<?php get_menu($db, $id, $strona); ?>
+<?php get_menu($id, $strona); ?>
             </ul>
         </div>
     </nav>

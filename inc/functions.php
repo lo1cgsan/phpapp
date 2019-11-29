@@ -8,39 +8,39 @@
 
 // github.com/lo1cgsan/phpapp
 // tablica asocjcyjna, która będzie zawierała wyniki zapytań
+$ret = array();
 
-function get_menu($db, $id, &$strona) {
-	$db->db_query('SELECT * FROM menu');
-	//print_r($ret);
+function get_menu($id, $strona) {
+	Baza::db_query('SELECT * FROM menu');
  	foreach (Baza::$ret as $k => $t) {
 		echo '
 <li class="nav-item">
     <a class="nav-link';
+
     if ($t['id'] == $id) {
     	echo ' active';
     	$strona = $t;
     }
-    echo '" href="?id='.$t['id'].'">'.$t['tytul'].'</a>
+
+    echo '" href="?id='.$t['plik'].'">'.$t['tytul'].'</a>
 </li>
 		';
 	}
 }
 
 function get_page_title($strona) {
-	if (array_key_exists('tytul', $strona)) {
+	if (array_key_exists('tytul', $strona))
 		echo $strona['tytul'];
-	} else {
+	else
 		echo 'Aplikacja PHP';
-	}
 }
 
 function get_page_content($strona) {
-	if (array_key_exists('plik', $strona)) {
+	if (array_key_exists('plik', $strona))
 		if (file_exists($strona['plik'].'.html'))
 			include($strona['plik'].'.html');
-	} else {
-		include('404.html');
-	}
+		else
+			include('404.html');
 }
 
 function clrtxt(&$el, $maxdl=30) {

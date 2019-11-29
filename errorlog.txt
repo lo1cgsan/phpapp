@@ -1,3 +1,5 @@
-[26-Nov-2019 19:49:37 Europe/Warsaw] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/debian/public_html/phpapp/inc/users.php on line 37
-[26-Nov-2019 19:51:04 Europe/Warsaw] PHP Notice:  Undefined variable: id in /home/debian/public_html/phpapp/userform.html on line 36
-[26-Nov-2019 19:51:10 Europe/Warsaw] PHP Notice:  Undefined variable: id in /home/debian/public_html/phpapp/userform.html on line 36
+[29-Nov-2019 09:37:13 Europe/Warsaw] PHP Fatal error:  Uncaught Error: Access to undeclared static property: Baza::$db in /home/lo1sand/public_html/phpapp/inc/db.php:10
+Stack trace:
+#0 /home/lo1sand/public_html/phpapp/index.php(17): Baza->__construct('db/baza.db')
+#1 {main}
+  thrown in /home/lo1sand/public_html/phpapp/inc/db.php on line 10

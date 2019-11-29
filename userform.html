@@ -4,7 +4,7 @@ if (isset($_POST['login'])) {
     global $db, $user, $kom;
     foreach ($_POST as $k => $v) {
         ${$k} = clrtxt($v);
-        print ${$k}."<br>";
+        // print ${$k}."<br>";
     }
 
     $ok = true;
@@ -33,7 +33,8 @@ if (isset($_POST['login'])) {
 
 ?>
 
-<form action="?id=<?php global $id; echo $id; ?>" method="POST">
+<form action="?id=userform" method="POST" name="dane" id="dane">
+    <input type="hidden" name="id_user" value="10">
     <div class="form-group">
         <div class="form-group">
             <label for="login">Login:</label>
