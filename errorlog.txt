@@ -3,3 +3,38 @@ Stack trace:
 #0 /home/lo1sand/public_html/phpapp/index.php(17): Baza->__construct('db/baza.db')
 #1 {main}
   thrown in /home/lo1sand/public_html/phpapp/inc/db.php on line 10
+[04-Dec-2019 09:05:57 Europe/Warsaw] PHP Fatal error:  Uncaught Error: Call to undefined function db_query() in /home/lo1sand/public_html/phpapp/formularz.html:27
+Stack trace:
+#0 /home/lo1sand/public_html/phpapp/inc/functions.php(41): include()
+#1 /home/lo1sand/public_html/phpapp/inc/template.php(34): get_page_content(Array)
+#2 /home/lo1sand/public_html/phpapp/index.php(27): include_once('/home/lo1sand/p...')
+#3 {main}
+  thrown in /home/lo1sand/public_html/phpapp/formularz.html on line 27
+[04-Dec-2019 09:06:04 Europe/Warsaw] PHP Fatal error:  Uncaught Error: Call to undefined function db_query() in /home/lo1sand/public_html/phpapp/formularz.html:27
+Stack trace:
+#0 /home/lo1sand/public_html/phpapp/inc/functions.php(41): include()
+#1 /home/lo1sand/public_html/phpapp/inc/template.php(34): get_page_content(Array)
+#2 /home/lo1sand/public_html/phpapp/index.php(27): include_once('/home/lo1sand/p...')
+#3 {main}
+  thrown in /home/lo1sand/public_html/phpapp/formularz.html on line 27
+[04-Dec-2019 09:06:14 Europe/Warsaw] PHP Fatal error:  Uncaught Error: Call to undefined function db_query() in /home/lo1sand/public_html/phpapp/formularz.html:27
+Stack trace:
+#0 /home/lo1sand/public_html/phpapp/inc/functions.php(41): include()
+#1 /home/lo1sand/public_html/phpapp/inc/template.php(34): get_page_content(Array)
+#2 /home/lo1sand/public_html/phpapp/index.php(27): include_once('/home/lo1sand/p...')
+#3 {main}
+  thrown in /home/lo1sand/public_html/phpapp/formularz.html on line 27
+[04-Dec-2019 09:06:21 Europe/Warsaw] PHP Fatal error:  Uncaught Error: Call to undefined function db_query() in /home/lo1sand/public_html/phpapp/formularz.html:27
+Stack trace:
+#0 /home/lo1sand/public_html/phpapp/inc/functions.php(41): include()
+#1 /home/lo1sand/public_html/phpapp/inc/template.php(34): get_page_content(Array)
+#2 /home/lo1sand/public_html/phpapp/index.php(27): include_once('/home/lo1sand/p...')
+#3 {main}
+  thrown in /home/lo1sand/public_html/phpapp/formularz.html on line 27
+[04-Dec-2019 09:06:27 Europe/Warsaw] PHP Fatal error:  Uncaught Error: Call to undefined function db_query() in /home/lo1sand/public_html/phpapp/formularz.html:27
+Stack trace:
+#0 /home/lo1sand/public_html/phpapp/inc/functions.php(41): include()
+#1 /home/lo1sand/public_html/phpapp/inc/template.php(34): get_page_content(Array)
+#2 /home/lo1sand/public_html/phpapp/index.php(27): include_once('/home/lo1sand/p...')
+#3 {main}
+  thrown in /home/lo1sand/public_html/phpapp/formularz.html on line 27

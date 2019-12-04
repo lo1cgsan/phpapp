@@ -10,7 +10,7 @@
 // tablica asocjcyjna, która będzie zawierała wyniki zapytań
 $ret = array();
 
-function get_menu($id, $strona) {
+function get_menu($id, &$strona) {
 	Baza::db_query('SELECT * FROM menu');
  	foreach (Baza::$ret as $k => $t) {
 		echo '
@@ -22,7 +22,7 @@ function get_menu($id, $strona) {
     	$strona = $t;
     }
 
-    echo '" href="?id='.$t['plik'].'">'.$t['tytul'].'</a>
+    echo '" href="?id='.$t['id'].'">'.$t['tytul'].'</a>
 </li>
 		';
 	}

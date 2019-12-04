@@ -1,20 +1,20 @@
 <?php
 
 if (isset($_POST['wiadomosc'])) {
-    global $db;
-    $post = $_POST['wiadomosc'];
-    $sql = "INSERT INTO posty VALUES(NULL, '$post')";
-    $db->exec($sql);
+    foreach ($_POST as $k => $v) {
+        ${$k} = clrtxt($v);
+    }
+    $sql = "INSERT INTO posty (id, tresc, user) VALUES(NULL, '$wiadomosc', '$user')";
+    Baza::db_exec($sql);
 }
 
 if (isset($_GET['akcja'])) {
-    global $db;
     $akcja = $_GET['akcja'];
     $idw = $_GET['idw'];
     switch ($akcja) {
         case 'del':
             $q = "DELETE FROM posty WHERE id = $idw";
-            $db->exec($q);
+            Baza::db_exec($q);
             $kom[] = "Usunięto wiadomość!";
             break;
         case 'edit':
@@ -23,21 +23,25 @@ if (isset($_GET['akcja'])) {
     }
 }
 
-$ret = array();
-db_query('SELECT * FROM posty', $ret);
+Baza::db_query('SELECT * FROM posty');
 echo '<h3>Wiadomości</h3>';
 echo '<ul>';
-foreach ($ret as $k => $t) {
+foreach (Baza::$ret as $k => $t) {
+    global $strona;
     echo '<li>';
-    echo $t['tresc'].' ';
-    echo '<a href="?id=formularz&akcja=del&idw='.$t['id'].'">Usuń »»»</a>';
+    echo $t['tresc'].' ('.$t['user'].', '.$t['data'].') ';
+    echo '<a href="?id='.$strona['id'].'&akcja=del&idw='.$t['id'].'">Usuń »»»</a>';
     echo '</li>';
 }
 echo '</ul>';
 ?>
 
-<form action="?id=formularz" method="POST" name="dane" id="dane">
+<form action="?id=<?php echo $strona['id']; ?>" method="POST" name="dane" id="dane">
     <input type="hidden" name="id_user" value="10">
+    <div class="form-group">
+        <label for="user">Użytkownik:</label>
+        <input type="text" name="user" id="user" class="form-control">
+    </div>
     <div class="form-group">
         <label for="login">Wiadomość:</label>
         <textarea name="wiadomosc" id="wiadomosc" class="form-control" rows="3"></textarea>
