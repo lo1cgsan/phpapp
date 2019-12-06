@@ -1,34 +1,15 @@
 <?php
 
 if (isset($_POST['login'])) {
-    global $db, $user, $kom;
+    global $user, $kom;
+
     foreach ($_POST as $k => $v) {
         ${$k} = clrtxt($v);
-        // print ${$k}."<br>";
     }
 
-    $ok = true;
-    if ($user->is_login($login)) {
-        $kom[] = "Podany login istnieje!";
-        $ok = false;
-    }
+    $user->login($login, $haslo);
+    print_r($_SESSION);
 
-    if ($user->is_email($email)) {
-        $kom[] = "Podany email istnieje!";
-        $ok = false;
-    }
-
-    if (strlen($haslo) < 8) {
-        $kom[] = "Za krótkie hasło!";
-        $ok = false;
-    }
-
-    if ($ok) {
-        $user->login = $login;
-        $user->email = $email;
-        $user->haslo = $haslo;
-        print_r($user->dane);
-    }
 }
 
 ?>
@@ -39,10 +20,6 @@ if (isset($_POST['login'])) {
         <div class="form-group">
             <label for="login">Login:</label>
             <input type="text" name="login" id="login" class="form-control">
-        </div>
-        <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email" class="form-control">
         </div>
         <div class="form-group">
             <label for="haslo">Hasło:</label>

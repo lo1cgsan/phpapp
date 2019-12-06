@@ -38,3 +38,11 @@ Stack trace:
 #2 /home/lo1sand/public_html/phpapp/index.php(27): include_once('/home/lo1sand/p...')
 #3 {main}
   thrown in /home/lo1sand/public_html/phpapp/formularz.html on line 27
+[06-Dec-2019 09:36:12 Europe/Warsaw] PHP Fatal error:  Uncaught Error: Call to undefined function db_query() in /home/lo1sand/public_html/phpapp/inc/users.php:47
+Stack trace:
+#0 /home/lo1sand/public_html/phpapp/userform.html(11): User->is_login('ewa')
+#1 /home/lo1sand/public_html/phpapp/inc/functions.php(41): include('/home/lo1sand/p...')
+#2 /home/lo1sand/public_html/phpapp/inc/template.php(34): get_page_content(Array)
+#3 /home/lo1sand/public_html/phpapp/index.php(27): include_once('/home/lo1sand/p...')
+#4 {main}
+  thrown in /home/lo1sand/public_html/phpapp/inc/users.php on line 47
