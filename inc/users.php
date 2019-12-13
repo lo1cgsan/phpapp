@@ -94,4 +94,6 @@ class User {
 
 }
 
+// github.com/lo1cgsan/phpapp
+
 ?>

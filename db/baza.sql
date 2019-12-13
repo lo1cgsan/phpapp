@@ -11,13 +11,6 @@ INSERT INTO menu VALUES(NULL, 'wiadomosci', 'Wiadomości', 2);
 INSERT INTO menu VALUES(NULL, 'userform', 'Zarejestruj', 3);
 INSERT INTO menu VALUES(NULL, 'userlogin', 'Zaloguj się', 4);
 
-CREATE TABLE posty (
-	id INTEGER PRIMARY KEY AUTOINCREMENT,
-	tresc VARCHAR NOT NULL,
-	user VARCHAR,
-	data DATE DEFAULT CURRENT_TIMESTAMP
-);
-
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
 	id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -25,6 +18,14 @@ CREATE TABLE users (
 	haslo CHAR(40),
 	email VARCHAR(50),
 	data DATE
+);
+
+CREATE TABLE posty (
+	id INTEGER PRIMARY KEY AUTOINCREMENT,
+	tresc VARCHAR NOT NULL,
+	user INTEGER NOT NULL,
+	data DATE DEFAULT CURRENT_TIMESTAMP,
+	FOREIGN KEY (user) REFERENCES users(id)
 );
 
 -- INSERT INTO menu(tytul, plik, id) VALUES('Klasa', 'klasa', NULL);

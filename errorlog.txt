@@ -46,3 +46,13 @@ Stack trace:
 #3 /home/lo1sand/public_html/phpapp/index.php(27): include_once('/home/lo1sand/p...')
 #4 {main}
   thrown in /home/lo1sand/public_html/phpapp/inc/users.php on line 47
+[13-Dec-2019 08:58:06 Europe/Warsaw] PHP Parse error:  syntax error, unexpected '[', expecting variable (T_VARIABLE) or '{' or '$' in /home/lo1sand/public_html/phpapp/inc/users.php on line 16
+[13-Dec-2019 09:04:43 Europe/Warsaw] PHP Parse error:  syntax error, unexpected '[', expecting variable (T_VARIABLE) or '{' or '$' in /home/lo1sand/public_html/phpapp/inc/users.php on line 16
+[13-Dec-2019 09:23:12 Europe/Warsaw] PHP Fatal error:  Uncaught Error: Call to undefined function db_lastInsertID() in /home/lo1sand/public_html/phpapp/inc/users.php:89
+Stack trace:
+#0 /home/lo1sand/public_html/phpapp/userform.html(30): User->savtb()
+#1 /home/lo1sand/public_html/phpapp/inc/functions.php(41): include('/home/lo1sand/p...')
+#2 /home/lo1sand/public_html/phpapp/inc/template.php(34): get_page_content(Array)
+#3 /home/lo1sand/public_html/phpapp/index.php(27): include_once('/home/lo1sand/p...')
+#4 {main}
+  thrown in /home/lo1sand/public_html/phpapp/inc/users.php on line 89
