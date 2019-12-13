@@ -33,7 +33,13 @@
 		<?php
 			get_page_content($strona);
             get_koms(Baza::$kom);
+            get_koms($user->kom);
             get_koms($kom);
+            if (isset($_COOKIE[$user->CookieName])) {
+                echo "<p>Ciasteczko: ".$_COOKIE[$user->CookieName]."</p>";
+            } else {
+                echo "<p>Brak cisteczka.</p>";
+            }
 		?>
 		</div>
 		<div class="col"></div>

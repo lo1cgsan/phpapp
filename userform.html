@@ -27,6 +27,7 @@ if (isset($_POST['login'])) {
         $user->login = $login;
         $user->email = $email;
         $user->haslo = $haslo;
+        $user->savtb();
         print_r($user->dane);
     }
 }
