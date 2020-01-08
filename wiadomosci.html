@@ -39,6 +39,9 @@ echo '</ul>';
 if (isset($_GET['akcja'])) {
     ;  // obsługa edycji
 }
+
+global $user;
+if ($user->id) {
 ?>
 
 <form action="?id=<?php echo $strona['id']; ?>" method="POST" name="dane" id="dane">
@@ -53,3 +56,6 @@ if (isset($_GET['akcja'])) {
     </div>
     <input type="submit" value="Wyślij" class="btn btn-primary">
 </form>
+<?php
+}
+?>

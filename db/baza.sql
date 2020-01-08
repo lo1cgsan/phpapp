@@ -10,6 +10,7 @@ INSERT INTO menu VALUES(NULL, 'witam', 'Witamy', 1);
 INSERT INTO menu VALUES(NULL, 'wiadomosci', 'Wiadomości', 2);
 INSERT INTO menu VALUES(NULL, 'userform', 'Zarejestruj', 3);
 INSERT INTO menu VALUES(NULL, 'userlogin', 'Zaloguj się', 4);
+INSERT INTO menu VALUES(NULL, 'userlogout', 'Wyloguj', 5);
 
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
