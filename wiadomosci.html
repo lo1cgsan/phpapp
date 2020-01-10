@@ -1,10 +1,12 @@
 <?php
 
 if (isset($_POST['wiadomosc'])) {
+    global $user;
     foreach ($_POST as $k => $v) {
         ${$k} = clrtxt($v);
     }
-    $sql = "INSERT INTO posty (id, tresc, user) VALUES(NULL, '$wiadomosc', '$user')";
+
+    $sql = "INSERT INTO posty (id, tresc, user) VALUES(NULL, '$wiadomosc', $user->id)";
     Baza::db_exec($sql);
 }
 
@@ -27,11 +29,15 @@ Baza::db_query('SELECT * FROM posty');
 echo '<h3>Wiadomości</h3>';
 echo '<ul>';
 foreach (Baza::$ret as $k => $t) {
-    global $strona;
+    global $strona, $user;
+    Baza::db_query('SELECT login FROM users WHERE id='.$t['user']);
     echo '<li>';
-    echo $t['tresc'].' ('.$t['user'].', '.$t['data'].') ';
-    echo '<a href="?id='.$strona['id'].'&akcja=del&idw='.$t['id'].'">Usuń »»»</a>';
-    echo ' <a href="?id='.$strona['id'].'&akcja=edt&idw='.$t['id'].'">Edytuj »»»</a>';
+    echo $t['tresc'].' ('.Baza::$ret[0]['login'].', '.$t['data'].') ';
+
+    if ($t['user'] == $user->id) {
+        echo '<a href="?id='.$strona['id'].'&akcja=del&idw='.$t['id'].'">Usuń »»»</a>';
+        echo ' <a href="?id='.$strona['id'].'&akcja=edt&idw='.$t['id'].'">Edytuj »»»</a>';
+    }
     echo '</li>';
 }
 echo '</ul>';
@@ -46,10 +52,6 @@ if ($user->id) {
 
 <form action="?id=<?php echo $strona['id']; ?>" method="POST" name="dane" id="dane">
     <input type="hidden" name="id_user" value="10">
-    <div class="form-group">
-        <label for="user">Użytkownik:</label>
-        <input type="text" name="user" id="user" class="form-control">
-    </div>
     <div class="form-group">
         <label for="login">Wiadomość:</label>
         <textarea name="wiadomosc" id="wiadomosc" class="form-control" rows="3"></textarea>
